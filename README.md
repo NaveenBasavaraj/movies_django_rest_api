@@ -1,16 +1,16 @@
-# movies_django_rest_api
-imdb like rest api using django rest api
+# Movies API using Django REST framework
+IMDB like application
 
 
-#### Serialization
+#### 2. Serialization
 
 complex data type (movie object) --> convert to python native type (dictionary) --> Render to Json
 
-#### De-Serialization
+#### 3. De-Serialization
 
 Render Json --> convert to python native type (dictionary) --> convert to complex data type
 
-#### Architecture --> ask below questions before starting on building an API
+#### 4. Architecture --> ask below questions before starting on building an API
 
 1. Type of Serializers?
     * Serializer
