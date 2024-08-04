@@ -6,9 +6,17 @@ from watchmate.api.serializers import MovieSerializer, StreamSerializer, ReviewS
 
 @api_view(['GET', 'POST'])
 def movie_list_api_view(request):
-    movies = Movie.objects.all()
-    serializer = MovieSerializer(movies, many=True)
-    return Response(serializer.data)
+    if request.method == 'GET':
+        movies = Movie.objects.all()
+        serializer = MovieSerializer(movies, many=True)
+        return Response(serializer.data)
+    if request.method == 'POST':
+        serialized_request_data = MovieSerializer(data=request.data)
+        if serialized_request_data.is_valid():
+            serialized_request_data.save()
+            return Response(serializer.data)
+        else:
+            return Response(serializer.errors)
 
 @api_view(['GET','PUT','DELETE'])
 def movie_detail_api_view(request, pk):
