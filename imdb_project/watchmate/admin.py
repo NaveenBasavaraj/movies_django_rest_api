@@ -1,6 +1,8 @@
 from django.contrib import admin
-from models import Movie
+from watchmate.models import Movie, SteamingPlatform, Review
 
 # Register your models here.
 
 admin.site.register(Movie)
+admin.site.register(SteamingPlatform)
+admin.site.register(Review)

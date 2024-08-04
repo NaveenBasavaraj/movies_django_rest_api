@@ -1,8 +1,8 @@
 from django.http import JsonResponse
 from django.shortcuts import render
-from models import Movie
+from watchmate.models import Movie
 
-# Create your views here.
+# json response based views ie. not using framework
 
 def movie_list_json(request):
     '''
