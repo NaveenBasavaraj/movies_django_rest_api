@@ -16,7 +16,7 @@ class ReviewList(mixins.ListModelMixin, mixins.CreateModelMixin, generics.Generi
         return self.create(request, *args, **kwargs)
 
 
-class ReviewDetail(mixins.RetrieveModelMixin, mixins.RetrieveModelMixin, generics.GenericAPIView):
+class ReviewDetail(mixins.RetrieveModelMixin, mixins.DestroyModelMixin, generics.GenericAPIView):
     queryset = Movie.objects.all()
     serializer_class = MovieSerializer
 

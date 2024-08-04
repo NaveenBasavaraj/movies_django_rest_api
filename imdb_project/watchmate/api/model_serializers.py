@@ -13,7 +13,7 @@ class StreamSerializer(ModelSerializer):
         fields = "__all__"
 
 
-class Reviewerializer(ModelSerializer):
+class ReviewSerializer(ModelSerializer):
     class Meta:
         model = Review
         fields = "__all__"
